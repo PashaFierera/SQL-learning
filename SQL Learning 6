@@ -1,0 +1,33 @@
+/*
+Created by Pasha
+*/
+
+SELECT
+    BillingCity,
+    ROUND(AVG(Total), 2) 
+FROM
+    Invoice
+WHERE
+	BillingCity LIKE 'L%'
+GROUP BY
+    BillingCity
+ORDER BY
+    BillingCity;
+
+
+Sorting City 
+Dont forget to use % for filtering
+
+SELECT
+    BillingCity,
+    ROUND(AVG(Total), 2) 
+FROM
+    Invoice
+GROUP BY
+    BillingCity
+HAVING 
+	avg(total) > 5
+ORDER BY
+    BillingCity;
+
+Having function where only top criteria
