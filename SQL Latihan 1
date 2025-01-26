@@ -1,0 +1,27 @@
+/*
+Created By : Pasha
+Created Date : 09-01-2025
+Description : 
+
+Sales Categories : 
+Baseline Purchase : BETWEEN $0.99 and $1.99
+Low Purchase : BETWEEN $2.00 and $6.99
+Target Purchase : BETWEEN $7 and $15
+Top Performer : Above $15 
+*/
+
+SELECT
+    InvoiceDate,
+    BillingAddress,
+    BillingCity,
+    Total,
+    CASE
+        WHEN Total < 2.00 THEN 'Baseline Purchase'
+        WHEN Total BETWEEN 2.00 AND 6.99 THEN 'Low Purchase'
+        WHEN Total BETWEEN 7.00 AND 15.00 THEN 'Target Purchase'
+        ELSE 'Top Performer'
+    END AS "Purchase Type"
+FROM
+    Invoice
+	ORDER BY
+    BillingCity;
