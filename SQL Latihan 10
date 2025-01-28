@@ -1,0 +1,12 @@
+/*
+Cities with highest customer spending
+*/
+SELECT
+	BillingCity AS City,
+	ROUND (AVG(Total), 2) AS AverageSpending
+FROM
+	Invoice  i
+GROUP BY
+	BillingCity
+ORDER BY
+	City ASC;
