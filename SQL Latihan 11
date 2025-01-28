@@ -1,0 +1,15 @@
+/*
+Created by Pasha
+*/
+
+SELECT
+    BillingCity,
+    AVG(TOTAL) AS CityAverage,
+    (SELECT AVG(TOTAL) FROM Invoice) AS OverallAverage
+FROM
+    Invoice
+GROUP BY
+    BillingCity
+ORDER BY
+    BillingCity;
+	
