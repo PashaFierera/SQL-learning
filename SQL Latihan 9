@@ -1,0 +1,14 @@
+/*
+Created by Pasha
+*/
+
+SELECT
+    BillingCountry,
+	BillingCity,
+    ROUND(AVG(Total), 2) 
+FROM
+    Invoice
+GROUP BY
+    BillingCity, BillingCountry
+ORDER BY
+    BillingCountry;
